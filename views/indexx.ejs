@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styleTwo.css">
+    <title></title>
+  </head>
+  <body>
+    <h2>Book-in-Queue</h2>
+    <h3>Put in the books you are currently watching. Feel free to update the price when the price of the book changes</h3>
+      <form action="/bookInput" method="post">
+        <section>
+          <label for="">Book Name</label>
+          <input type="text" class="bookName"  name="bookName" value="">
+        </section>
+        <section>
+          <label for="">Category</label>
+          <input type="text" class="category"  name="category" value="">
+
+        </section>
+        <section>
+          <label for="">Price</label>
+          <input type="number" class="price"  name="price" value="">
+        </section>
+        <section>
+          <input type="submit" value="submit"name="Submit">
+        </section>
+      </form>
+      <table>
+        <tr>
+          <th>Book Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      <% for(var i=0; i<userList.length; i++) {%>
+        <tr>
+          <td><%= userList[i].bookName %></td>
+          <td><%=userList[i].category %></td>
+          <td contenteditable="true"><%= userList[i].price %></td>
+          <td><button class = "update" type="submit" name="update">Update</button></td>
+          <td><button class="delete" type="" name="delete">Delete</button></td>
+       </tr>
+    <% } %>
+    </table>
+
+
+    <script src="main.js"></script>
+  </body>
+</html>

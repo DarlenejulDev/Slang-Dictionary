@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/views/style.css">
+    <title>Slang Dictionary Portal</title>
+  </head>
+  <body>
+    <h1>Slang Dictionary Portal</h1>
+    <p>You can edit a submitted defintion by simply clicking on it.</p>
+    <form class="" action="/profileEntry" method="post">
+      <section>
+        <input type="text" class='userWord'name="userWord" value="" placeholder="Word">
+      </section>
+      <section>
+        <textarea name="userMeaning" class='userMeaning' rows="8" cols="80" placeholder="Definition"></textarea>
+      </section>
+      <section>
+        <input type="submit" value="submit" name="submit"></input>
+      </section>
+    </form>
+  <% for(var i=0; i <slangResults.length; i++) {%>
+    <section class="box">
+
+      <h3><%=slangResults[i].userWord %></h3>
+      <h4 contenteditable="true"><%= slangResults[i].userMeaning %></h4>
+      <span><button class = "update" type="submit" name="update">Update(Just Fix It)</button></span>
+      <span><button class="delete" type="" name="delete">Delete(Nah,dis gotta go)</button></span>
+    </section>
+  <% } %>
+  <a href="/searchWord">Go back </a>
+  <script src="main.js"></script>
+  </body>
+</html>

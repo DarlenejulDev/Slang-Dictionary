@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/views/style.css">
+    <title>Slang Dictionary Portal</title>
+  </head>
+  <body>
+    <h1>Slang Dictionary Portal</h1>
+    <form class="" action="/profileEntry" method="post">
+      <section>
+        <input type="text" name="" value="" placeholder="Word">
+      </section>
+      <section>
+        <textarea name="name" rows="8" cols="80" placeholder="Definition"></textarea>
+      </section>
+      <section>
+        <button class="update" type="submit" name="button">Update (Just Fix It)</button>
+        <button class= "delete" type="submit" name="button">Delete (Nah,gotta go)</button>
+
+      </section>
+    </form>
+    <section class="box">
+      <h3>%=userList[i].word %></h3>
+      <h4 contenteditable="true"><%= userList[i].Definition %></h4>
+    </section>
+
+  </body>
+</html>

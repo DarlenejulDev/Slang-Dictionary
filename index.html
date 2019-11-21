@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <h2>Book-in-Queue</h2>
+
+      <form action="/bookInput" method="post">
+        <section>
+          <label for="">Book Name</label>
+          <input type="text" id="bookName"  name="bookName" value="">
+        </section>
+        <section>
+          <label for="">Category</label>
+          <!-- <input type="text" class="category"  name="category" value -->
+          <select class="" name="">
+            <option value="Finance">Finance</option>
+            <option value="Self-Help">Self-Help</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Thriller">Thriller</option>
+            <button class="dropbtn">Dropdown</button>
+          </select>
+
+        </section>
+        <section>
+          <label for="">Price</label>
+          <input type="text" id="price"  name="price" value="">
+        </section>
+        <section>
+          <button type="button" name="submit">Submit</button>
+        </section>
+
+      </form>
+      <table>
+        <tr>
+          <th>Book Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      <% for(var i=0; i<userChoice.length; i++) {%>
+        <tr>
+          <td>userChoice[i].name</td>
+          <td>userChoice[i].category</td>
+          <td contenteditable="true"><input type="number" name="" value=""> userChoice[i].price</td>
+          <td><button id="update" type="submit" name="update">Update</  button></td>
+          <td><button id="delete" type="delete" name="delete">Delete</  button></td>
+       </tr>
+    <% } %>
+    </table>
+  </body>
+</html>

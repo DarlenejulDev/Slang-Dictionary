@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Slang Dictionary</h1>
+    <h2>What word are you looking for?</h2>
+    <form class="searchWord" action="/searchWord" method="get">
+      <input class="userWord" type="text" name="userWord" value="">
+      <button class="find"type="submit" name="submit" value="submit">Find</button>
+   </form>
+
+    <section>
+      <h3>Display word here:
+        <span>
+          <%= slangResults[0].userMeaning %>
+        </span></h3>
+    </section>
+    <script type="text/javascript" src="main.js">
+
+    </script>
+
+  </body>
+</html>
