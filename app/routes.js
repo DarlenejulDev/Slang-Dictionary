@@ -13,6 +13,8 @@ module.exports = function(app, passport, db) {
       // const presentUser =req.user._id
         db.collection('slangEntry').find().toArray((err, result) => {
           if (err) return console.log(err)
+          console.table(result);
+          console.log(`User Meaning: ${result[0].userMeaning}`);
           res.render('profile.ejs', {
             user : req.user,
             slangResults: result
@@ -32,15 +34,19 @@ module.exports = function(app, passport, db) {
 app.get('/welcome', (req, res) => {
   db.collection('slangEntry').find().toArray((err, result) => {
     if (err) return console.log(err)
+    console.table(result);
     res.render('index2.ejs', {slangResults: result})
   })
 })
-app.get('/searchWord', (req,res)=>{
+app.post('/searchWord', (req,res)=>{
   const word = req.body.userWord;
   // console.log("hi")
+  console.log(`The word is ${word}`);
   db.collection('slangEntry').find({userWord: word}).toArray((err, result) => {
     if (err) return console.log(err)
     // console.log(Array.isArray(result))
+    console.table(result);
+    console.log(result[0].userMeaning);
     res.render('index2.ejs', {slangResults: result})
   })
 })
