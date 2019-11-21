@@ -94,7 +94,7 @@ Array.from(del).forEach(function(element) {
             'userMeaning': userMeaning,
           })
         }).then(function (response) {
-          // window.location.reload()
+          window.location.reload()
         })
       });
 });

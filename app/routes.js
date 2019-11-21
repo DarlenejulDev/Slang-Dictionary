@@ -35,7 +35,7 @@ app.get('/welcome', (req, res) => {
   db.collection('slangEntry').find().toArray((err, result) => {
     if (err) return console.log(err)
     console.table(result);
-    res.render('index2.ejs', {slangResults: result})
+    res.render('index.ejs', {slangResults: result})
   })
 })
 app.post('/searchWord', (req,res)=>{
@@ -47,7 +47,7 @@ app.post('/searchWord', (req,res)=>{
     // console.log(Array.isArray(result))
     console.table(result);
     console.log(result[0].userMeaning);
-    res.render('index2.ejs', {slangResults: result})
+    res.render('index.ejs', {slangResults: result})
   })
 })
 
@@ -59,14 +59,8 @@ app.post('/profileEntry', (req, res) => {
     res.redirect('/home')
   })
 })
-app.post('/searchWord', (req, res) => {
-  db.collection('slangEntry').save({userChoiceWord: req.body.userChoiceWord}, (err, result) => {
-    if (err) return console.log(err)
-    console.log('saved to database')
-    res.redirect('/home')
-  })
-})
-// This updates our table by finding the book name and category and matching the name of the book and category in the database, then updating the price to now be the new price the user has seen.
+
+// This updates our browser to retieve the definition after the matched word is found in the document of the collection. The server will look for the user word, once it finds the user's word, it updates it with the desired value of userMeaning. In this case, it will not create another document since our upsert is set to true is there is a match.
 app.put('/profileEntry', (req, res) => { console.log('hello')
   db.collection('slangEntry')
   .findOneAndUpdate({userWord: req.body.userWord}, {
@@ -106,7 +100,7 @@ app.put('/profileEntry', (req, res) => { console.log('hello')
 // })
 
 // this finds all of the properties,once it is a match, it then deletes them
-app.delete('/slangEntry', (req, res) => { console.log(req.body)
+app.delete('/profileEntry', (req, res) => { console.log(req.body)
   db.collection('slangEntry').findOneAndDelete({userWord: req.body.userWord, userMeaning: req.body.userMeaning}, (err, result) => {
     if (err) return res.send(500, err)
       res.send('Message deleted!')
@@ -125,7 +119,7 @@ app.delete('/slangEntry', (req, res) => { console.log(req.body)
 
         // process the login form
         app.post('/login', passport.authenticate('local-login', {
-            successRedirect : '/welcome', // redirect to the secure profile section
+            successRedirect : '/home', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
