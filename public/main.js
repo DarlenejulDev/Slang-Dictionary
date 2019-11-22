@@ -5,7 +5,6 @@ let userMeaning = document.getElementsByClassName('userMeaning')
 //
 let del = document.getElementsByClassName('delete')
 let update= document.getElementsByClassName('update')
-let userChoiceWord=document.getElementsByClassName('userWord').value
 let find= document.getElementsByClassName('find')
 
 // Any user w/o accounts
