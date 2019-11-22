@@ -2,18 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="searchWord.css">
+    <title>Slang Dictionary</title>
   </head>
   <body>
     <h1>Slang Dictionary</h1>
     <h2>What word are you looking for?</h2>
     <form class="searchWord" action="/searchWord" method="POST">
-      <input class="userWord" type="text" name="userWord" value="">
+      <p>
+        <span class="input">
+          <input  class="userWord" type="text" name="userWord" placeholder="Slang Word">
+          <span></span>
+        </span>
+      </p>
       <button class="find"type="submit" name="submit" value="submit">Find</button>
    </form>
 
     <section>
-      <h3>Display word here:
+      <h3>Display word here :
         <span>
           <%= slangResults[0].userMeaning %>
         </span></h3>

@@ -4,15 +4,19 @@
   height: 400px;
   border: 2px solid black;
 }
-body{
-background-color: yellow;
+body {
+    background: url('http://i.imgur.com/Eor57Ae.jpg') no-repeat fixed center center;
+    background-size: cover;
+    font-family: Montserrat;
 }
 
-body{
-    margin-top: 20px;
-    background-image: url(img/background.jpg);
-    background-repeat:none;
-    background-position: center;
-    background-size: cover;
-    word-wrap:break-word;
+h1,span, label, p{
+  color: white;
+}
+
+a{
+  color: #ffb2b2;
+}
+.btn-warning{
+  background-color:#ffb2b2;
 }

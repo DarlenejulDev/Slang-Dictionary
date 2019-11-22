@@ -1,0 +1,14 @@
+h1,a,p{
+  display: flex;
+  justify-content: center;
+  color: #ffb2b2;
+  font-size:60px;
+  background-color: white;
+
+}
+
+body{
+      background: url(img/blue.jpg) no-repeat fixed center center;
+      background-size: cover;
+      font-family: Montserrat;
+}
